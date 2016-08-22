@@ -29,6 +29,9 @@ class powerdns_recursor (
   $config_mode     = undef,
   $config_path     = undef,
   $config_purge    = undef,
+  $config_listen   = undef,
+  $config_uid      = undef,
+  $config_gid      = undef,
 ) {
   # Fail fast if we're not using a new Puppet version.
   if versioncmp($::puppetversion, '3.7.0') < 0 {
