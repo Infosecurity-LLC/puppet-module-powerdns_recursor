@@ -1,7 +1,5 @@
-# Yet Another Puppet ::powerdns Module
+# Yet Another Puppet ::powerdns_recursor Module
 
-[![Puppet Forge]
-[![Build Status]
 
 #### Table of Contents
 
@@ -44,12 +42,10 @@ All configuration can be handled either through Hiera or by arguments to the `po
     classes:
       - 'powerdns_recursor'
 
-    powerdns::backend::gpgsql::host:     '127.0.0.1'
-    powerdns::backend::gpgsql::user:     'username'
-    powerdns::backend::gpgsql::password: 'password'
-    powerdns::backend::gpgsql::dbname:   'powerdns'
-    powerdns::backend::gpgsql::port:     5432
-    powerdns::backend::gpgsql::dnssec:   'no'
+    powerdns_recursor::config_listen: '0.0.0.0'
+    powerdns_recursor::settings:
+    allow-from: "10.0.0.0/8"
+    forward-zones: "localdomain=10.0.0.1,localdomain2=10.0.0.2"
 
 ## Todo
 
