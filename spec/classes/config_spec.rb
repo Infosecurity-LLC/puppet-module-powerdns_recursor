@@ -41,12 +41,16 @@ describe 'powerdns_recursor::config' do
         it { should contain_concat__fragment('config-dir').with_content("config-dir=#{config_directory}\n") }
 
         it { should contain_powerdns_recursor__setting('local-address') }
+        it { should contain_concat__fragment('local-address') }
 
         it { should contain_powerdns_recursor__setting('setuid') }
         it { should contain_concat__fragment('setuid') }
 
-        #it { should contain_powerdns_recursor__setting('setgid') }
-        #it { should contain_concat__fragment('setgid') }
+        it { should contain_powerdns_recursor__setting('setgid') }
+        it { should contain_concat__fragment('setgid') }
+
+        it { should contain_powerdns_recursor__setting('quiet') }
+        it { should contain_concat__fragment('quiet') }
       end
 
     end
