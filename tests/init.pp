@@ -1,0 +1,1 @@
+include ::powerdns_recursor
