@@ -44,12 +44,11 @@ All configuration can be handled either through Hiera or by arguments to the `po
 
     powerdns_recursor::config_listen: '0.0.0.0'
     powerdns_recursor::settings:
-      allow-from: "10.0.0.0/8"
-      forward-zones: "localdomain=10.0.0.1,localdomain2=10.0.0.2"
+      allow-from: '10.0.0.0/8'
+      forward-zones: 'localdomain=10.0.0.1,localdomain2=10.0.0.2'
 
 ## Todo
 
-  * Consider supporting a chrooted installation.
   * Extend support to other distributions.
   * Add more tests.
 
