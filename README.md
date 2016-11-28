@@ -11,7 +11,8 @@
 
 This is yet another Puppet module to manage a PowerDNS DNS recursor. It currently targets the
 latest stable release of Puppet, and should support both Debian and RedHat family distributions.
-Although RedHat wasn't tested yet.
+Although RedHat wasn't tested yet. This module was produced by forking https://github.com/jmkeyes/puppet-powerdns.
+
 
 *Beware that this module will recursively purge your distribution's default PowerDNS configuration.*
 

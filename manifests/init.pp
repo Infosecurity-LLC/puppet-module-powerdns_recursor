@@ -1,6 +1,6 @@
 # == Class: powerdns_recursor
 #
-# Copyright 2016 Jan Kaufman <jan.kaufman@prozeta.eu>
+# Copyright 2016 Joshua M. Keyes <joshua.michael.keyes@gmail.com>
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
