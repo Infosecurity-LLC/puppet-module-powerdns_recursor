@@ -45,7 +45,6 @@ class powerdns_recursor::config {
   validate_string($config_listen)
   validate_string($config_setuid)
   validate_string($config_setgid)
-  validate_re($config_listen, '^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$')
 
   validate_absolute_path($config_path)
 
