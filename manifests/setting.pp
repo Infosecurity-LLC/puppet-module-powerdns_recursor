@@ -20,7 +20,7 @@ define powerdns_recursor::setting (
   $value  = undef,
 ) {
   concat::fragment { $name:
-    ensure  => $ensure,
+#    ensure  => $ensure,
     target  => "${::powerdns_recursor::config::config_path}/recursor.conf",
     content => "${name}=${value}\n",
   }
