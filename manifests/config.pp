@@ -22,7 +22,7 @@ class powerdns_recursor::config {
 
   $default_config_path  = $::osfamily ? {
     'Debian' => '/etc/powerdns',
-    'RedHat' => '/etc/pdns',
+    'RedHat' => '/etc/pdns-recursor',
     default  => undef,
   }
 
