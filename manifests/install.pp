@@ -33,10 +33,7 @@ class powerdns_recursor::install {
   $package_name   = pick($::powerdns_recursor::package_name, $default_package_name)
   $package_ensure = pick($::powerdns_recursor::package_ensure, 'installed')
 
-  validate_string($package_name)
-
-  validate_string($package_ensure)
-  validate_re($package_ensure, '^(present|latest|nstalled|[._0-9a-zA-Z:-]+)$')
+  validate_re($package_ensure, '^(present|latest|installed|[._0-9a-zA-Z:-]+)$')
 
   package { $package_name:
     ensure => $package_ensure,

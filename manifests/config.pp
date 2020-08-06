@@ -33,20 +33,8 @@ class powerdns_recursor::config {
   $config_path   = pick($::powerdns_recursor::config_path,  $default_config_path)
   $config_quiet  = pick($::powerdns_recursor::config_quiet, 'yes' )
   $config_listen = pick($::powerdns_recursor::config_listen, '127.0.0.1' )
-  $config_setuid = pick($::powerdns_recursor::config_setuid, 'pdns' )
-  $config_setgid = pick($::powerdns_recursor::config_setuid, 'pdns' )
-
-  validate_bool($config_purge)
-
-  validate_string($config_owner)
-  validate_string($config_group)
-  validate_string($config_mode)
-  validate_string($config_quiet)
-  validate_string($config_listen)
-  validate_string($config_setuid)
-  validate_string($config_setgid)
-
-  validate_absolute_path($config_path)
+  $config_setuid = pick($::powerdns_recursor::config_setuid, 'pdns-recursor' )
+  $config_setgid = pick($::powerdns_recursor::config_setgid, 'pdns-recursor' )
 
   file { $config_path:
     ensure  => directory,

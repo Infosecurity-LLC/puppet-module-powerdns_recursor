@@ -16,22 +16,20 @@
 #
 
 class powerdns_recursor (
-  $settings        = {},
-  $setuid          = undef,
-  $setgid          = undef,
-  $package_name    = undef,
-  $package_ensure  = undef,
-  $service_name    = undef,
-  $service_ensure  = undef,
-  $service_enable  = undef,
-  $config_owner    = undef,
-  $config_group    = undef,
-  $config_mode     = undef,
-  $config_path     = undef,
-  $config_purge    = undef,
-  $config_listen   = undef,
-  $config_uid      = undef,
-  $config_gid      = undef,
+  Hash              $settings       = {},
+  Optional[String]  $package_name   = undef,
+  Optional[String]  $package_ensure = undef,
+  Optional[String]  $service_name   = undef,
+  Optional[String]  $service_ensure = undef,
+  Optional[String]  $service_enable = undef,
+  Optional[String]  $config_owner   = undef,
+  Optional[String]  $config_group   = undef,
+  Optional[String]  $config_mode    = undef,
+  Optional[String]  $config_path    = undef,
+  Optional[Boolean] $config_purge   = undef,
+  Optional[String]  $config_listen  = undef,
+  Optional[String]  $config_setuid  = undef,
+  Optional[String]  $config_setgid  = undef,
 ) {
   # Fail fast if we're not using a new Puppet version.
   if versioncmp($::puppetversion, '3.7.0') < 0 {
@@ -39,11 +37,6 @@ class powerdns_recursor (
   }
 
   validate_hash($settings)
-
-  if $setuid and $setgid {
-    validate_string($setuid)
-    validate_string($setgid)
-  }
 
   contain '::powerdns_recursor::install'
   contain '::powerdns_recursor::config'
